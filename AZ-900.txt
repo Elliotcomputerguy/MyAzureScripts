@@ -1,0 +1,115 @@
+AZ-900 Cheat Sheet
+
+# Benefits of the cloud:
+
+[1] No upfront costs
+[2] Agility 
+[3] Scalability
+[4] Pay for what you need
+
+# ============================================================================================
+  Horizontal Scaling = Adding more servers
+  Vertical Scaling = Adding more resources to a servers
+  Elasticity = Automatically adding or removing resources due to load
+  Fault Tolerance = Ensures your application remains operational during any expereinced faults. 
+# =============================================================================================
+
+# CapEx vs OpEx
+
+# =============================================================================================
+Capital expenduature is upfront costs. Network equiptment, hardware is paid as capEx.
+Operational expenduature is a payment plan. There is no upfront costs. Cloud is agile as you pay as you go or for what you need.
+# =============================================================================================
+
+# Infrastructure As A Service - IAAS
+
+# =============================================================================================
+  IaaS is instant computing infrastructure provisioned and managed over the internet. 
+  On Prem you would have a virtualized enviroment utilising Vsphere or HyperV or even physical servers to run applications.  
+  This would require a storage array or arrays, vms, network switches, firewalls, routers, hypervisors etc. 
+  With the cloud you can instantly with a couple of clicks create all the above in a matter of minutes with out all 
+  the upfront costs. You create your storage account, create a network and a vm with a choice of OS and you are ready to 
+  install your application. When you need to scale up you can add more resources with a click. You can create a baseline and 
+  re-deploy it in minutes. Yo are only limited by your imagination. You can now see the limitation of on-prem to cloud. 
+  You are limited by your hardware compute processing capabilities. The rack space you have available, 
+  switch density, storage capacity, the list goes on.  
+# =============================================================================================
+
+# Platform As A Service - PaaS
+
+# =============================================================================================
+  Platform as a service provides an enviroment for building, testing and deploying software applications. A development framework.
+  The goal of IaaS is to deploy your DC instantly PaaS allows you to deploy your application intstantly. 
+  It takes away the overhead of managing the IaaS side of things. No OS, Vms, Storage. With PaaS you have developer tools and middleware.
+  It provides services and applications at the click of a button from the azure market place.
+# =============================================================================================  
+
+# Software As A Service - SaaS
+
+# =============================================================================================
+  The cloud provider will provide all underlining requirements for your application. You simply run your application. 
+  Take email as an example. Gmail, 365. Storage you have dropbox or one drive. Slack etc. SaaS is very fast. 
+  SaaS is subscription based. Per user. You get access to sophisticated applications. You will get access to it from anywhere. 
+# =============================================================================================
+
+# Cloud Deployment models
+
+# =============================================================================================
+Public = All your data center equiptment is in the cloud. Downsides of being completly in the cloud.
+         You loose control of certain aspects of management. Security, bespoke applications, legacy hardware.
+
+Private = Is where you have your own DC and host cloud services. You offer services like email, applications etc.
+          You control security, Compute, Storage capacity, networking, life cycle etc.
+
+Hybrid = Is where you have a combination of both. You will have cloud for services that benfit best from the cloud. 
+         You have applications or legacy servers or security required services on prem. 
+# =============================================================================================
+
+# Azure Regions
+
+# =============================================================================================
+  
+  An Azure region is a collection of one or more data centers in a specific geographical area. 
+  Each data center in a region is physically isolated. 
+  When you choose your geographical region it is important where you deploy. Deploy close to your user 
+  audiance to not introduce any unrequired latency. You do have the option to deploy via a CDN but will be covered 
+  in another chapter and there is other tools like Azure traffic manger if you deploy to different regions. 
+   
+# =============================================================================================
+
+# Azure Geographies
+
+# =============================================================================================
+  When you deploy your services. You deploy to a specific region, a geographical area. Geographies preserve compliance 
+  and data residency. If you were limited by law to host or store data outside of a geographical area Azure allows you 
+  to specify the region. Any data replicated will not be hosted or stored in a region that could infringe on any complaince 
+  requirements to not host in specific geographical areas the customer does not want to host. 
+# =============================================================================================
+
+# Availability Zones
+
+# =============================================================================================
+  High availabiity is a requirement for any service that demands a required uptime commitment. Availability zones 
+  provide a service to allow you to have high availabiity in the event a specific region went down. Currently not all regions 
+  offer availbility zones. when you are building a vm you have the choice of 1,2,3 availabiity zones.
+  This is how many instances of that vm do you want stored in different data centers in the same specific region.  
+# =============================================================================================
+
+# Region Pairs
+
+# =============================================================================================
+  Availability zone offeres the ability to have high availability up to 3 different data centers in one specific region.
+  With region pairs you can request high availability in a region pair. which is 2 regions within the same geography that are 
+  at minimum 300 miles apart. 
+# =============================================================================================
+
+# Availability switches
+
+# =============================================================================================
+  Availability sets are fault domains. A fault domain being your rack that your vm is hosted in.
+  availabiity sets allows you to choose how many fault domains and update domains. A fault domain being physical with its 
+  own power, cooling and networking. Update domain being logical seperate. 
+  When you define an availabiity set it will create 2 fault domains and 5 update domains. Azure fabric will automatically 
+  allocate your vms.
+# =============================================================================================
+
