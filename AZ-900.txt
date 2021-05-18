@@ -103,13 +103,28 @@ Hybrid = Is where you have a combination of both. You will have cloud for servic
   at minimum 300 miles apart. 
 # =============================================================================================
 
-# Availability switches
+# Availability sets
 
 # =============================================================================================
-  Availability sets are fault domains. A fault domain being your rack that your vm is hosted in.
-  availabiity sets allows you to choose how many fault domains and update domains. A fault domain being physical with its 
-  own power, cooling and networking. Update domain being logical seperate. 
+  Availability sets are fault domains and update domains. A fault domain being your rack that your vm is hosted in. An update domain being a logical 
+  collection of your vms being allocated into upgrate groups.
+  availabiity sets allows you to choose how many fault domains and update domains you would like. 
   When you define an availabiity set it will create 2 fault domains and 5 update domains. Azure fabric will automatically 
-  allocate your vms.
+  allocate your vms. an Availability set provides 99.95% uptime. 
 # =============================================================================================
+
+# Virtual Machine scale sets
+
+# =============================================================================================
+  Scale sets are elastic allowing you to automatically scale out when a compute threshold is reached and scale down when are below a 
+  threshold. It saves the administration of manually adding a vm and then removing it when it is no longer required. 
+# =============================================================================================
+
+# Azure batch
+
+# =============================================================================================
+  Allows for the creation of hundreds of vms when required. Again like scale sets it is elastic and will scale out and in depending 
+  on configured threshold resource settings.
+# =============================================================================================
+
 
