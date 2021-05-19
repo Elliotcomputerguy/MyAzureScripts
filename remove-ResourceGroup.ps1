@@ -13,7 +13,6 @@ $resourceName = Read-Host 'Enter the name of your resource group to remove:'
 Remove-AzResourceGroup -name $resourceName
 Write-Host $resourceName + 'has attempted to be removed.'
 
-
 # remove multiple resources from a resource group.
 
 #Remove-AzResource `
