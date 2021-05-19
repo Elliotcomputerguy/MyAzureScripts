@@ -127,4 +127,133 @@ Hybrid = Is where you have a combination of both. You will have cloud for servic
   on configured threshold resource settings.
 # =============================================================================================
 
+# Containers
+
+# =============================================================================================
+  Containers are like vms but do not come with the overhead of a vm. They are micro instances that isolates software from its 
+  enviroment and packages the code and all dependencies need for an application to run. The container does not need 
+  patching or upgrading. It simply runs what it needs on the container. They allow you to break your application into multiple Containers
+  called micro services. You can have a front end in one container and a database on another container etc. Azure offers PaaS
+  ACI Azure container instances. Azure cluster instances allows you to upload your containers and execute. Azure also provides 
+  an Azure Kubernetes cluster. The Kubernetes cluster is a orchestration service for containers allowing you great managability
+  over multiple containers.
+# =============================================================================================
+
+# Azure App service
+
+# =============================================================================================
+Provides the ability to create application without the requirement of infrastructure. You can create web applications, API applications
+webjobs and Mobileapps. You can create your applications in any language you are familiar with. It is auto scaling and has high availability
+Use in conjunction with Github, Azure DevOps. 
+# =============================================================================================
+
+# Serverless Computing (alot of ground to cover here)
+
+# =============================================================================================
+         https://www.scalyr.com/blog/azure-functions-in-python-a-simple-introduction/
+# =============================================================================================
+A serverless architecture doesn’t really mean no server. It means less server. Your code still runs on a server, 
+but you don’t need to care as much about the underlying infrastructure because a third-party service will handle it for you.
+
+Function app: is nothing more than code that can be set to respond to a triggered event. It is known as FaaS.
+The function will execute an action and return a value as a standard function would in programming. Functions can be global or local.  
+
+Azure logic app: provide a visual designer to model and automate your process as a series of steps known as a workflow.
+There are many connectors across the cloud and on-premises to quickly integrate across services and protocols. When an alert is triggered
+the logic app can take the notification data and use it with any of the connectors to remediate the alert or start services. 
+# =============================================================================================
+
+# Azure Storage
+
+# =============================================================================================
+Azure storage provided options for structred data like a SQL relational DB or semi structured like noSQL DBs 
+and unstructured data like Documents, videos etc. It provides automated backups and recovery, replication and anylitics, encryption. 
+# =============================================================================================
+
+# Storage Accounts
+
+# =============================================================================================
+Azure storage accounts provide a highliy scalable, available performant and durable solutions. The seperate services are
+Blobs. A blob storage service provides the ability to store arbituary data objects. Pretty much anything. 
+Next is Tables. Tables provide a NoSQL-style store for storing structured and semi structured data. Unlike a relational database 'SQL'
+tables in Azure storage do not require a fixed schema, so different entries in the same table can have different fields. 
+Queues provides reliable messaging queueing between application components. Files provides managed file shares that can be used from Azure
+vms or on prem servers. 
+
+There are three types of storage blobs, block blobs, append blobs and page blobs. Page blobs are used for vhd when deploying 
+with unmanaged disks. Unmaged disks uses older storage technology for Azure vms. Managed disks are reccomended. 
+# =============================================================================================
+
+# Storage Performance Tiers
+
+# =============================================================================================
+When creating a storage account you are given two options to create your storage account from either standard or premium or ultra.
+Standard supports all storage services like blob, tables, files and queues and unmanaged Azure virtual machine disks. 
+It uses magnetic disks or SSD.
+premium tier is designed for workloads with greater I/O demand and is using SSD disks. Down side they only support blob and do not support
+any other storage services. They also only support locally redundant (LRS) replication option and do not support access tiers.
+Ultra are for high IO intensive workloads such as SAP -HANNA. More info required. New perfomance tier
+# =============================================================================================
+
+# Replication options
+
+# =============================================================================================
+When you create storage accounts you choose how your data will be replicated. 
+
+Locally reduncant storage (LRS) : Makes three synchronous copies of your data within a single DC.
+                                : Available for general Purpose or blob storage accounts, at both stand and Prem perf tiers.
+
+Zone redundant storage (ZRS)    : Makes three copies of your data across multiple availibility zones within a region.
+                                : Available for general purp v2 storage acounts only, at standard performance only.
+                  
+Geo redundant storage (GRS)     : Same as LRS, plus three additonal asynchronous copies to a second dc over 300 miles away
+                                : from the primary dc. Data replication ypically occurs within 15 mins, no SLA provided. 
+                                : Available for general purp or blob storage accounts, at standard perf only.
+
+ReadAccess geo redundant storage (RA-GRS) : Same as GRS plus you have a readonly acess to the data in the secondary DC.
+                                          : Available for gen purp or blob storage, at stand perf only.
+# =============================================================================================
+
+# Access tiers
+
+# =============================================================================================
+Azure blob storage supports all three access tiers: Hot, Cool and Archive. Each represents trade offs in performance, availability and costs.
+Access tiers apply to blob storage only. They do not apply to other storage services like tables, queue or files.
+
+Hot: This access tier is desgined for constant access. Data access costs are low while storage costs are high.
+
+Cool: This access tier is optimized for for storing large amounts of data that is infrequently accessedand stored for at least 
+30 days. The availabiltiy SLA is lower than hot tier.data access costs are higher and storage costs are lower.
+
+Archive: This access tier is designed for long-term archiving of infrequently used data based on ssd disks. Can tolerate deveral hours
+of retrival latency and will remain in archive for min 180 days. Accessing the data is more expesive than access hot or cold tiers.
+
+Premium: provides high performance access for frequently-used data, based on SSD. It is only available for the blob block account type.
+# =============================================================================================
+
+# Account Kind 
+
+# =============================================================================================
+There are three account kinds known as general purpose v1, general purpose v2 and blob storage.
+
+Blob supports block and append only. NOT PAGE, Standard only. access tiers hot, cold and archive and LRS,GRS,RA-GRS
+General pupose version 1 supports blob, file, Queue and table. supports blob page, standard and premium. LRS,GRS,RA-GRS
+Gerneral pupose version 2 supports blob, file, table, queue. supports blob page. standard and premium, Hot, Cold and archive and LRS,GRS,RA-GRS
+# =============================================================================================
+
+# ARM Templates
+
+# =============================================================================================
+Arm templates are provided to deploy multiple resources over and over again. They are in Json format 
+making it easy to read and write. 
+# =============================================================================================
+
+# Azure networking 
+
+# =============================================================================================
+ You create vnets in azure to connect all your vms. You can create fws, load balancers, app gateways, WAF,
+ Azure front door, network security groups, vnet peering, PIPs, vnet gateways, site-to-site, client-site gateways, user defined routes. 
+ The first 4 addresses in each subnet is not available and is used by Azure. Azure also provides 
+ some very good tools to monitor your network called Network watcher.
+# =============================================================================================
 
