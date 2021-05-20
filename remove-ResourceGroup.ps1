@@ -15,7 +15,7 @@ Write-Host $resourceName + 'has attempted to be removed.'
 
 # remove multiple resources from a resource group.
 
-#Remove-AzResource `
-#  -ResourceGroupName ExampleResourceGroup `
-#  -ResourceName ExampleVM `
-#  -ResourceType Microsoft.Compute/virtualMachines
+Remove-AzResource `
+  -ResourceGroupName ExampleResourceGroup `
+  -ResourceName ExampleVM `
+  -ResourceType Microsoft.Compute/virtualMachines
