@@ -8,5 +8,5 @@ $resource_ID1 = Get-AzResource -ResourceGroupName 'group1' -ResourceName 'resour
 
 $resource_ID2 = Get-AzResource -ResourceGroupName 'group1' -ResourceName 'resource2'
 
-# move the two resources to resourcegroup 'resourcegroupnametomoveto'
+# move the two resources to resourcegroup 'resourcegroupnametomoveto' 
 Move-AzResource -DestinationResourceGroupName 'resourcegroupnametomoveto' -ResourceId $resource_ID1.ResourceId, $resource_ID2.ResourceId 
