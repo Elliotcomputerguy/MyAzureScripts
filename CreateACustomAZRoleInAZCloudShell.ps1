@@ -34,3 +34,5 @@ In actions we have added virtualMachines, we have also added our subscription in
 New-AzRoleDefinition -InputFile $home/clouddrive/ReaderVM.json
 # Check that the custom role exists. Or from Gui path 'Home/subscriptions/subscription/IAM' you should see the icon in orange under roles 
 Get-AzRoleDefinition | Where-Object {$_.IsCustom -eq $true} | Format-List
+# Remove custom role
+Get-AzRoleDefinition -Name "Custom Role - RG Reader" | Remove-AzRoleDefinition
