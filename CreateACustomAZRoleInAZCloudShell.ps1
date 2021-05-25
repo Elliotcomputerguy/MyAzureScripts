@@ -1,3 +1,7 @@
+# get a list of avaialble actions to build a template.  
+Get-AzProviderOperation 
+# To check virtual machines append */virtualmachines/* | FT Operation,OperationName
+
 # Create a custom role and convert to Json in cloud shell
 # This demo custom role creates a custom role to read and manage vms.
 Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File $home/clouddrive/ReaderVM.json
