@@ -5,10 +5,12 @@ $resourceName = Read-Host 'Enter the name of your resource group to remove:'
 Remove-AzResourceGroup -name $resourceName
 Write-Host $resourceName + 'has attempted to be removed.'
 
-# remove multiple resources from a resource group.
+# Remove multiple resources from a resource group.
 
 Remove-AzResource `
   -ResourceGroupName ExampleResourceGroup `
   -ResourceName ExampleVM `
   -ResourceType Microsoft.Compute/virtualMachines
+
+# Remove resource group with lock
 
